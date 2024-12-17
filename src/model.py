@@ -256,8 +256,8 @@ def main():
 
         print("\nStep 4: Training and evaluating models...")
         for model_name, model_info in models.items():
-            for sampling in ['none' ,'smote']:
-                print(f"\nTraining {model_name} with {sampling} sampling...")
+            for sampling in ['without sampling']:
+                print(f"\nTraining {model_name} {sampling} ...")
                 
                 with mlflow.start_run(run_name=f"{model_name}_{sampling}") as run:
                     # Récupération du run_id
