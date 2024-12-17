@@ -13,7 +13,7 @@ mlflow.set_experiment("MLOps")
 mlflow.set_tracking_uri("https://dagshub.com/asmaa.hnaien/mlops.mlflow") 
 
 # Load the run ID and model name from the saved JSON file
-reports_path = "./models/run_info.json"
+reports_path = "./backend/models/run_info.json"
 with open(reports_path, 'r') as file:
     run_info = json.load(file)
 
