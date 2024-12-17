@@ -18,34 +18,11 @@ def main():
     # Activer le mode large
     st.set_page_config(layout="wide")
 
-    # Barre latérale pour la navigation
-    st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to :", ["Home", "Predict"])
+    st.title("Drought prediction from user input")
+    st.subheader("Enter details below: ")
 
-    # Navigation entre les pages
-    if page == "Home":
-        st.title("Welcome to Drought prediction App🌵")
-        st.write(
-            """
-            ## Welcome to the Drought Prediction App using Machine Learning.
-            
-            ### Features:
-            - **Predict from User Input**: Provide climate data to get a prediction.
-
-            This app leverages machine learning algorithms to analyze climate data and predict whether a drought is likely.
-            """
-        )
-        st.image(
-            "https://images.pexels.com/photos/60013/desert-drought-dehydrated-clay-soil-60013.jpeg",
-            caption="Drought Image",
-        )
-
-    elif page == "Predict":
-        st.title("Drought prediction from user input")
-        st.subheader("Enter details below: ")
-
-        # Formulaire avec deux colonnes
-        with st.form("form", clear_on_submit=True):
+    # Formulaire avec deux colonnes
+    with st.form("form", clear_on_submit=True):
             col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
             # Champs dans la première colonne
