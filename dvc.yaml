@@ -14,3 +14,15 @@ stages:
     outs:
       - ../data/processed:
           cache: false
+
+  model_building:
+    cmd: python ./src/model.py
+    deps:
+      - ../data/processed
+      - ./src/model.py
+
+  model_registration:
+    cmd: python ./src/register.py
+    deps:
+    - ./backend/models/run_info.json
+    - ./src/register.py
