@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  data_collection:
+    cmd: python ./src/data_collection.py
+    deps:
+    - path: ./src/data_collection.py
+      hash: md5
+      md5: f907d75d35b775d28161becd5cdc58d9
+      size: 1358
+    outs:
+    - path: ../data/raw
+      hash: md5
+      md5: f202dbff820335ec3c4feea731952a3b.dir
+      size: 168240126
+      nfiles: 2
+  data_preparation:
+    cmd: python ./src/data_preparation.py
+    deps:
+    - path: ./src/data_preparation.py
+      hash: md5
+      md5: fdd21828a83d059c95cc8f7fd5da1f2d
+      size: 3007
+    outs:
+    - path: ../data/processed
+      hash: md5
+      md5: 915d9299b34af989665f89e078c89e7e.dir
+      size: 149974833
+      nfiles: 2

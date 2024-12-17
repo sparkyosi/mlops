@@ -1,0 +1,16 @@
+stages:
+  data_collection:
+    cmd: python ./src/data_collection.py
+    deps:
+      - ./src/data_collection.py
+    outs:
+      - ../data/raw:
+          cache: false
+  
+  data_preparation:
+    cmd: python ./src/data_preparation.py
+    deps:
+    - ./src/data_preparation.py
+    outs:
+      - ../data/processed:
+          cache: false
